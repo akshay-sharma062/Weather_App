@@ -1,1 +1,6 @@
 @import "tailwindcss";
+body{
+  background-image: url('https://images.pexels.com/photos/391522/pexels-photo-391522.jpeg?auto=compress&cs=tinysrgb&w=600');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
