@@ -15,9 +15,12 @@ function App() {
 
   const searchWeatherHandle=()=>{
     if(City !==""){
-      axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${City}&appid=3265874a2c77ae4a04bb96236a642d2f&units=metric`
+      axios.get(`http://api.weatherapi.com/v1/current.json?key=969eacd94fd14050846105856250602&q=${City}&aqi=yes`
           ).then(
-            (response)=>console.log(response)
+            (response)=>{
+              // console.log(response.data)
+              setWeather(response.data)
+            }
           ).catch(
             (err)=>console.log(err)
           )
@@ -25,7 +28,7 @@ function App() {
   }
   return (
     <>
-    <div className="p-15 px-20 m-30 sm:w-6xl text-center   shadow-2xl shadow-black rounded-2xl bg-transparent">
+    <div className="p-15 px-20 m-30 sm:w-6xl text-center  font-bold  shadow-2xl shadow-black rounded-2xl bg-transparent">
 
       <Search searchData={City} eventHandler={changeSearch} searchWeather={searchWeatherHandle}/>
       <Result resultData={Weather}/>
